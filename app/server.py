@@ -183,11 +183,8 @@ def predict(request: PredictRequest):
         })
 
     write_log(data["logger"], to_log)
-    logger.info("DATA LOGGER ----")
-
-    # logger.info(to_log)
-    data['logger'].write(json.dumps(to_log) + "\n")
-    logger.info(data["logger"])
+    data['logger'].write(to_log + "\n")
+    logger.info(to_log)
     return response
 
 
